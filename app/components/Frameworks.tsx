@@ -204,7 +204,7 @@ const Frameworks = () => {
             Technologies I Work With
           </h2>
           <p className="text-gray-400 text-lg">
-            My tech stack for building modern applications
+            My tech stack for building  applications
           </p>
         </motion.div>
 

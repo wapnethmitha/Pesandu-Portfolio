@@ -21,7 +21,7 @@ interface Project {
 const Projects = () => {
   const projects: Project[] = [
     {
-      title: 'Pause+ Social Media Detox App',
+      title: 'Pause+ Social Media Detox App (Ongoing)',
       description: 'Developed the gamified experience and ranking system as a collaborative effort. Created and produced the marketing video for app promotion and user engagement.',
       image: '/images/pause.png',
       links: {
@@ -33,7 +33,7 @@ const Projects = () => {
     },
     {
       title: 'Nestora Real Estate Platform',
-      description: 'A property listing website with search, filter, and detailed view options. Built to provide a user-friendly interface for browsing real estate listings.',
+      description: 'A property listing website with advanced search and filtering. Features detailed property views including floor plans, location maps and Built with a user-friendly interface for seamless real estate browsing.',
       image: '/images/nestora.png',
       links: {
         github: 'https://github.com/wapnethmitha/Nestora-RealEstate',
@@ -43,7 +43,7 @@ const Projects = () => {
     },
     {
       title: 'Plane Ticket Management System',
-      description: 'Java-based program for booking, canceling, and managing plane seats. Tracks transactions and generates printable tickets.',
+      description: 'Java application for airline ticket operations including purchasing, cancelling, and viewing ticket details. Features an interactive seat map showing available and booked seats.',
       image: '/images/planeseatmanagement.png',
       links: {
         github: 'https://github.com/wapnethmitha/Plane-Ticket_Management-System'
