@@ -117,7 +117,7 @@ const Contact = () => {
           className="text-center mt-20 pt-10 border-t border-zinc-800/50"
         >
           <p className="text-sm text-gray-500">
-            © All rights reserved 2024-2025{' '}
+            © All rights reserved 2025-2026{' '}
             <span >
               pesanduwanniarachchi
             </span>
