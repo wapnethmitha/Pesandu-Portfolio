@@ -8,6 +8,7 @@ import { FaGithub, FaYoutube, FaExternalLinkAlt } from 'react-icons/fa';
 interface Project {
   title: string;
   description: string;
+  highlights: string[];
   image: string;
   links: {
     github?: string;
@@ -16,80 +17,123 @@ interface Project {
   };
   tags: string[];
   category: 'featured' | 'other';
+  projectType: 'university' | 'personal' | 'collaborative';
 }
 
 const Projects = () => {
   const projects: Project[] = [
     {
       title: 'EduPredict - AI Study Copilot',
-      description: 'AI powered study companion that analyzes your facial expressions and study logs to predict how many hours you need to hit your target score. Combines a mood-aware "Neo" Face Analyzer with a regression model trained on past exam data to build personalized study plans.',
+      description: 'AI powered study companion that predicts study hours needed to hit target scores.',
+      highlights: [
+        'Designed & built interactive dashboard UI with Next.js',
+        'Created mood-aware face analyzer interface',
+        'Implemented clean, intuitive data visualizations'
+      ],
       image: '/images/edupredict.png',
       links: {
         live: 'https://edupredict-iptq.onrender.com/'
       },
       tags: ['Next.js', 'TypeScript', 'Machine Learning'],
-      category: 'featured'
+      category: 'featured',
+      projectType: 'personal'
     },
     {
-      title: 'Pause+ Social Media Detox App (Ongoing)',
-      description: 'Developed the gamified experience and ranking system as a collaborative effort. Created and produced the marketing video for app promotion and user engagement.',
+      title: 'Pause+ Social Media Detox App',
+      description: 'Collaborative mobile app helping users reduce social media addiction.',
+      highlights: [
+        'Built React Native screens with gamified UX',
+        'Developed ranking system & achievement UI',
+        'Created engaging marketing video for promotion'
+      ],
       image: '/images/pause.png',
       links: {
         youtube: 'https://youtu.be/VFHqTC7uQrg?si=wB2nI3EV3Fbelzvf',
         live: 'https://pauseplus.click'
       },
       tags: ['React Native', 'Node.js', 'MongoDB'],
-      category: 'featured'
+      category: 'featured',
+      projectType: 'collaborative'
     },
     {
       title: 'Nestora Real Estate Platform',
-      description: 'A property listing website with advanced search and filtering. Features detailed property views including floor plans, location maps and Built with a user-friendly interface for seamless real estate browsing.',
+      description: 'Property listing website with advanced search and filtering capabilities.',
+      highlights: [
+        'Built responsive UI using React & Tailwind CSS',
+        'Implemented property listing and filtering UI',
+        'Focused on clean layout and usability'
+      ],
       image: '/images/nestora.png',
       links: {
         github: 'https://github.com/wapnethmitha/Nestora-RealEstate',
       },
       tags: ['Next.js', 'TypeScript', 'Tailwind CSS'],
-      category: 'featured'
+      category: 'featured',
+      projectType: 'university'
     },
     {
       title: 'Plane Ticket Management System',
-      description: 'Java application for airline ticket operations including purchasing, cancelling, and viewing ticket details. Features an interactive seat map showing available and booked seats.',
+      description: 'Java application for comprehensive airline ticket operations.',
+      highlights: [
+        'Built interactive seat map visualization',
+        'Implemented ticket purchase and cancellation flow',
+        'Designed clean, functional user interface'
+      ],
       image: '/images/planeseatmanagement.png',
       links: {
         github: 'https://github.com/wapnethmitha/Plane-Ticket_Management-System'
       },
       tags: ['Java', 'Spring Boot', 'MySQL'],
-      category: 'featured'
+      category: 'featured',
+      projectType: 'university'
     },
     {
       title: 'Bookstore Management API',
-      description: 'RESTful APIs for managing books, customers, and orders in a bookstore. Tested using Postman to ensure proper functionality and error handling.',
+      description: 'RESTful APIs for managing books, customers, and orders.',
+      highlights: [
+        'Designed clean RESTful API architecture',
+        'Implemented CRUD operations with error handling',
+        'Tested thoroughly using Postman'
+      ],
       image: '/images/bookstoreapi.png',
       links: {
         github: 'https://github.com/wapnethmitha/Book-Store-API'
       },
       tags: ['Node.js', 'Express', 'MongoDB'],
-      category: 'other'
+      category: 'other',
+      projectType: 'university'
     },
     {
       title: 'Event Ticketing System',
-      description: 'Multi-threaded app where vendors release tickets and users buy them via a producer-consumer model. Shows concurrency and thread use.',
+      description: 'Multi-threaded app demonstrating concurrency concepts.',
+      highlights: [
+        'Implemented producer-consumer design pattern',
+        'Built real-time ticket availability tracking',
+        'Demonstrated thread-safe operations'
+      ],
       image: '/images/eventticketingsystem.png',
       links: {
         github: 'https://github.com/wapnethmitha/Event-Ticketing-System'
       },
       tags: ['React', 'Node.js', 'Socket.io'],
-      category: 'other'
+      category: 'other',
+      projectType: 'university'
     },
     {
       title: 'Student Grading System',
-      description: 'Python program that classifies student progress and displays results as a histogram. Focuses on decision-making logic and data visualization.',
+      description: 'Python program for student progress tracking and visualization.',
+      highlights: [
+        'Built data classification logic for student progress',
+        'Implemented histogram visualization for results',
+        'Designed intuitive command-line interface'
+      ],
       image: '/images/studentgradingsystem.webp',
       links: {
         github: 'https://github.com/wapnethmitha/Student-Grading_System'
       },
       tags: ['Python', 'SQLite', 'Tkinter'],
-      category: 'other'
+      category: 'other',
+      projectType: 'university'
     }
   ];
 
@@ -119,8 +163,8 @@ const Projects = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            Here are some of my key academic projects that showcase my skills in software development, 
-            problem-solving, and technical implementation.
+            Real projects that demonstrate my ability to build clean, functional interfaces.
+            Each project showcases different skills and problem-solving approaches.
           </motion.p>
         </motion.div>
 
@@ -168,12 +212,37 @@ const Projects = () => {
 
               {/* Content */}
               <div className="p-4 relative z-10">
+                {/* Project Type Badge */}
+                <div className="flex items-center gap-2 mb-2">
+                  <span className={`text-xs px-2 py-1 rounded-full ${
+                    project.projectType === 'university' 
+                      ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30' 
+                      : project.projectType === 'collaborative'
+                      ? 'bg-green-500/20 text-green-400 border border-green-500/30'
+                      : 'bg-purple-500/20 text-purple-400 border border-purple-500/30'
+                  }`}>
+                    {project.projectType === 'university' ? '📚 University Project' : 
+                     project.projectType === 'collaborative' ? '🤝 Collaborative Project' : 
+                     '💻 Personal Project'}
+                  </span>
+                </div>
+                
                 <h3 className="text-xl font-semibold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent mb-2">
                   {project.title}
                 </h3>
-                <p className="text-gray-400 text-sm mb-4">
+                <p className="text-gray-400 text-sm mb-3">
                   {project.description}
                 </p>
+                
+                {/* Highlights/Bullet Points */}
+                <ul className="text-gray-400 text-xs space-y-1 mb-4">
+                  {project.highlights.map((highlight, idx) => (
+                    <li key={idx} className="flex items-start gap-2">
+                      <span className="text-purple-400 mt-0.5">•</span>
+                      <span>{highlight}</span>
+                    </li>
+                  ))}
+                </ul>
 
                 {/* Links with enhanced animations */}
                 <div className="flex gap-3">

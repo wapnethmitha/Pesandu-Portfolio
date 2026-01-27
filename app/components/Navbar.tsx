@@ -4,7 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const Navbar = () => {
-  const navItems = ['Home', 'Frameworks', 'Projects', 'Approach', 'Contact'];
+  const navItems = ['Home', 'Services', 'Frameworks', 'Projects', 'Approach', 'Contact'];
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);

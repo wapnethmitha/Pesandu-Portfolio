@@ -87,25 +87,25 @@ const Approach = () => {
     {
       icon: FaLightbulb,
       title: "Problem-First Mindset",
-      description: "I believe in thoroughly understanding the problem before jumping into solutions. Every line of code should serve a purpose and add value.",
+      description: "Understand the problem before writing code. Every line should serve a purpose and add value.",
       color: "from-blue-400 to-blue-600"
     },
     {
       icon: FaCode,
       title: "Clean & Maintainable Code",
-      description: "Writing clean, documented, and maintainable code is crucial. I focus on creating solutions that are both efficient and easy to understand.",
+      description: "Write clean, documented, maintainable code. Focus on solutions that are efficient and easy to understand.",
       color: "from-purple-400 to-purple-600"
     },
     {
       icon: FaRocket,
       title: "Continuous Learning",
-      description: "Technology evolves rapidly. I stay updated with the latest trends and best practices, constantly expanding my skill set.",
+      description: "Stay updated with latest trends and best practices. Constantly expanding my skill set.",
       color: "from-indigo-400 to-indigo-600"
     },
     {
       icon: FaUsers,
       title: "User-Centric Design",
-      description: "The end user's experience is paramount. I strive to create intuitive interfaces and smooth experiences that solve real problems.",
+      description: "The end user's experience is paramount. Create intuitive interfaces that solve real problems.",
       color: "from-blue-400 to-purple-600"
     }
   ];

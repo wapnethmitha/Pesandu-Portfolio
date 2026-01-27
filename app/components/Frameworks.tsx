@@ -8,7 +8,8 @@ interface TechSkill {
   name: string;
   icon: string;
   description: string;
-  category: 'language' | 'framework' | 'tool';
+  category: 'frontend' | 'other';
+  featured?: boolean;
 }
 
 const FrameworkCard = ({ skill, index }: { skill: TechSkill; index: number }) => {
@@ -55,7 +56,7 @@ const FrameworkCard = ({ skill, index }: { skill: TechSkill; index: number }) =>
           <div className="text-center">
             <motion.h3 className="text-xl font-semibold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent mb-1">{skill.name}
             </motion.h3>
-            <span className="text-xs text-gray-400 capitalize">{skill.category}</span> </div>
+            <span className="text-xs text-gray-400">{skill.category === 'frontend' ? '⭐ Core Stack' : 'Additional'}</span> </div>
         </motion.div>
 
         {/* Description overlay */}
@@ -104,91 +105,84 @@ const Frameworks = () => {
   }, []);
 
   const skills: TechSkill[] = [
-    {
-      name: 'JavaScript',
-      icon: '/icons/javascript.png',
-      description: 'Proficient in JavaScript, applied in web development for frontend and backend solutions.',
-      category: 'language'
-    },
-    {
-      name: 'Python',
-      icon: '/icons/python.png',
-      description: 'Applied Python in data science and automation tasks, utilized in academic projects and practical applications.',
-      category: 'language'
-    },
-    {
-      name: 'Java',
-      icon: '/icons/java.png',
-      description: 'Proficient in Java, with expertise in object-oriented programming, primarily used for backend development in academic and personal projects.',
-      category: 'language'
-    },
-    // {
-    //   name: 'PHP',
-    //   icon: '/icons/php.png',
-    //   description: 'Gained practical experience with PHP through academic lab-based practicals and coursework in web development.',
-    //   category: 'language'
-    // },
-    // {
-    //   name: 'SQL',
-    //   icon: '/icons/sql.png',
-    //   description: 'Good understanding of SQL, with a focus on designing and working with relational databases in academic projects.',
-    //   category: 'language'
-    // },
-    {
-      name: 'HTML5',
-      icon: '/icons/html5.png',
-      description: 'Proficient in HTML5, regularly used for creating responsive and accessible web interfaces.',
-      category: 'language'
-    },
+    // ✅ FEATURED FRONTEND STACK
     {
       name: 'React.js',
       icon: '/icons/reactjs.png',
-      description: 'Gained experience with React through academic projects, utilizing it to develop dynamic, responsive, and user-friendly web applications.',
-      category: 'framework'
+      description: 'My go-to library for building interactive user interfaces. Used in multiple projects to create dynamic, component-based web applications.',
+      category: 'frontend',
+      featured: true
     },
     {
       name: 'Next.js',
       icon: '/icons/nextjs.png',
-      description: 'Experienced in using Next.js to build performant and SEO-friendly web applications, including the development of this portfolio',
-      category: 'framework'
+      description: 'Framework of choice for building fast, SEO-friendly websites. Powers this portfolio and several client-ready projects.',
+      category: 'frontend',
+      featured: true
     },
     {
-      name: 'React Native',
-      icon: '/icons/reactnative.png',
-      description: 'Experienced in React Native for cross-platform mobile development. Collaborated on developing Pause+, a social media detox app focused on productivity.',
-      category: 'framework'
-    },
-    {
-      name: 'Spring Boot',
-      icon: '/icons/spring.png',
-      description: 'Chosen backend framework for Java-based web applications, with extensive use in multiple full-stack projects and academic coursework to build robust and scalable solutions.',
-      category: 'framework'
-    },
-    {
-      name: 'Node.js',
-      icon: '/icons/nodejs.png',
-      description: 'Utilized Node.js for backend development in various projects, including building the API layer for this portfolio website.',
-      category: 'framework'
+      name: 'JavaScript',
+      icon: '/icons/javascript.png',
+      description: 'Core language for all my frontend work. Proficient in modern ES6+ features for clean, maintainable code.',
+      category: 'frontend',
+      featured: true
     },
     {
       name: 'Tailwind CSS',
       icon: '/icons/tailwind.png',
-      description: 'Utilized Tailwind CSS to design clean, responsive, and customizable user interfaces efficiently in web development projects.',
-      category: 'tool'
+      description: 'My preferred styling solution for rapid UI development. Creates clean, responsive designs with utility-first approach.',
+      category: 'frontend',
+      featured: true
+    },
+    {
+      name: 'HTML5',
+      icon: '/icons/html5.png',
+      description: 'Strong foundation in semantic HTML for accessible, well-structured web pages that rank well in search engines.',
+      category: 'frontend',
+      featured: true
     },
     {
       name: 'Framer Motion',
       icon: '/icons/framer.png',
-      description: 'Used Framer Motion to develop smooth, interactive UI animations that improve user experience in web applications.',
-      category: 'tool'
+      description: 'Used to create smooth, professional animations that enhance user experience and bring interfaces to life.',
+      category: 'frontend',
+      featured: true
     },
-    //{
-    //  name: 'Figma',
-    //  icon: '/icons/figma.png',
-    //  description: 'Skilled in Figma for designing intuitive and visually appealing UI/UX prototypes and collaborating effectively on web and app design projects.',
-     // category: 'tool'
-    //}
+    // ⚠️ OTHER SKILLS (de-emphasized)
+    {
+      name: 'Node.js',
+      icon: '/icons/nodejs.png',
+      description: 'Backend runtime for JavaScript. Used for API development and server-side functionality when needed.',
+      category: 'other'
+    },
+    {
+      name: 'Python',
+      icon: '/icons/python.png',
+      description: 'Applied in data science, automation, and academic projects. Comfortable with scripting and backend logic.',
+      category: 'other'
+    },
+    {
+      name: 'Java',
+      icon: '/icons/java.png',
+      description: 'Strong OOP foundation from academic projects. Experience with backend development and system design.',
+      category: 'other'
+    },
+    {
+      name: 'Spring Boot',
+      icon: '/icons/spring.png',
+      description: 'Java backend framework used in full-stack academic projects for building robust APIs.',
+      category: 'other'
+    },
+    {
+      name: 'React Native',
+      icon: '/icons/reactnative.png',
+      description: 'Cross-platform mobile development. Collaborated on Pause+, a social media detox app.',
+      category: 'other'
+    },
   ];
+
+  const featuredSkills = skills.filter(s => s.featured);
+  const otherSkills = skills.filter(s => !s.featured);
 
   return (
     <section id="frameworks" className="min-h-screen bg-zinc-950 text-white py-20 px-4">
@@ -200,19 +194,53 @@ const Frameworks = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-blue-400 
-            bg-clip-text text-transparent mb-4 leading-relaxed py-1"> {/* Added leading-relaxed and py-1 */}
-            Technologies I Work With
+            bg-clip-text text-transparent mb-4 leading-relaxed py-1">
+            My Frontend Stack
           </h2>
           <p className="text-gray-400 text-lg">
-            My tech stack for building  applications
+            The tools I use to build modern, responsive websites
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"> {/* Reduced gap */}
-          {skills.map((skill, index) => (
+        {/* Featured Frontend Technologies */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+          {featuredSkills.map((skill, index) => (
             <FrameworkCard key={skill.name} skill={skill} index={index} />
           ))}
         </div>
+
+        {/* Other Skills - Smaller, de-emphasized section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-12"
+        >
+          <h3 className="text-lg text-gray-500 text-center mb-6">Also familiar with</h3>
+          <div className="flex flex-wrap justify-center gap-3">
+            {otherSkills.map((skill, index) => (
+              <motion.div
+                key={skill.name}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.05 }}
+                whileHover={{ scale: 1.05, y: -2 }}
+                className="flex items-center gap-2 px-4 py-2 bg-zinc-900/50 backdrop-blur-sm rounded-lg border border-zinc-800/50 hover:border-zinc-700 transition-all"
+              >
+                <div className="w-5 h-5 relative">
+                  <Image
+                    src={skill.icon}
+                    alt={skill.name}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <span className="text-sm text-gray-400">{skill.name}</span>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
 
         {/* Currently Exploring section */}
         <motion.div 

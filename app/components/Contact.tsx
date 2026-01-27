@@ -58,6 +58,26 @@ const Contact = () => {
               Let&apos;s Connect
             </span>
           </motion.h2>
+          
+          {/* CTA Banner */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="max-w-2xl mx-auto"
+          >
+            <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-purple-500/20 rounded-xl p-6 backdrop-blur-sm">
+              <div className="flex items-center justify-center gap-2 mb-2">
+                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                <span className="text-green-400 font-medium">Open to Freelance & Remote Frontend Projects</span>
+              </div>
+              <p className="text-gray-400">
+                Looking for a frontend developer for your next project? I&apos;d love to hear about it. 
+                Let&apos;s build something great together.
+              </p>
+            </div>
+          </motion.div>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-16">
