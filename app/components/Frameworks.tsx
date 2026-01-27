@@ -95,7 +95,7 @@ const FrameworkCard = ({ skill, index }: { skill: TechSkill; index: number }) =>
     </motion.div>
   );
 };
-
+;;;;;;;;;;
 const Frameworks = () => {
   const [isClient, setIsClient] = useState(false);
   
@@ -122,18 +122,18 @@ const Frameworks = () => {
       description: 'Proficient in Java, with expertise in object-oriented programming, primarily used for backend development in academic and personal projects.',
       category: 'language'
     },
-    {
-      name: 'PHP',
-      icon: '/icons/php.png',
-      description: 'Gained practical experience with PHP through academic lab-based practicals and coursework in web development.',
-      category: 'language'
-    },
-    {
-      name: 'SQL',
-      icon: '/icons/sql.png',
-      description: 'Good understanding of SQL, with a focus on designing and working with relational databases in academic projects.',
-      category: 'language'
-    },
+    // {
+    //   name: 'PHP',
+    //   icon: '/icons/php.png',
+    //   description: 'Gained practical experience with PHP through academic lab-based practicals and coursework in web development.',
+    //   category: 'language'
+    // },
+    // {
+    //   name: 'SQL',
+    //   icon: '/icons/sql.png',
+    //   description: 'Good understanding of SQL, with a focus on designing and working with relational databases in academic projects.',
+    //   category: 'language'
+    // },
     {
       name: 'HTML5',
       icon: '/icons/html5.png',
@@ -182,12 +182,12 @@ const Frameworks = () => {
       description: 'Used Framer Motion to develop smooth, interactive UI animations that improve user experience in web applications.',
       category: 'tool'
     },
-    {
-      name: 'Figma',
-      icon: '/icons/figma.png',
-      description: 'Skilled in Figma for designing intuitive and visually appealing UI/UX prototypes and collaborating effectively on web and app design projects.',
-      category: 'tool'
-    }
+    //{
+    //  name: 'Figma',
+    //  icon: '/icons/figma.png',
+    //  description: 'Skilled in Figma for designing intuitive and visually appealing UI/UX prototypes and collaborating effectively on web and app design projects.',
+     // category: 'tool'
+    //}
   ];
 
   return (

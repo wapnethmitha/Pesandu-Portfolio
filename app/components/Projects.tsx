@@ -21,6 +21,16 @@ interface Project {
 const Projects = () => {
   const projects: Project[] = [
     {
+      title: 'EduPredict - AI Study Copilot',
+      description: 'AI powered study companion that analyzes your facial expressions and study logs to predict how many hours you need to hit your target score. Combines a mood-aware "Neo" Face Analyzer with a regression model trained on past exam data to build personalized study plans.',
+      image: '/images/edupredict.png',
+      links: {
+        live: 'https://edupredict-iptq.onrender.com/'
+      },
+      tags: ['Next.js', 'TypeScript', 'Machine Learning'],
+      category: 'featured'
+    },
+    {
       title: 'Pause+ Social Media Detox App (Ongoing)',
       description: 'Developed the gamified experience and ranking system as a collaborative effort. Created and produced the marketing video for app promotion and user engagement.',
       image: '/images/pause.png',

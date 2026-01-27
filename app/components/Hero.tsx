@@ -35,7 +35,7 @@ const Hero = () => {
     { icon: FaInstagram, href: 'https://instagram.com/pesaa.w', color: 'hover:text-purple-500' },
     { icon: FaFacebook, href: 'https://www.facebook.com/share/1Ads5qqBdE/?mibextid=wwXIfr', color: 'hover:text-blue-600' },
   ];
-
+  
   return (
     <section id="home" className="relative min-h-screen bg-zinc-950">
       <div className="pt-20"> {/* Added padding-top to account for navbar */}
