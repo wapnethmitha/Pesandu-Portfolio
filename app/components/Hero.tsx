@@ -131,8 +131,8 @@ const Hero = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4 }}
               >
-                Software Engineering Undergraduate{' '}
-                <span className="text-purple-400 font-medium">passionate about building great software</span>
+                Computer Science undergraduate{' '}
+                <span className="text-purple-400 font-medium">who loves learning and building useful software</span>
               </motion.p>
             </motion.div>
 
