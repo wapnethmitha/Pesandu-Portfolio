@@ -73,8 +73,7 @@ const Contact = () => {
                 <span className="text-green-400 font-medium">Open to Internships & Freelance Projects</span>
               </div>
               <p className="text-gray-400">
-                Looking for a software engineering intern or need a developer for your project? 
-                Let&apos;s build something great together.
+                If my work resonates with you, I’d be happy to quietly support your project and grow along the way.
               </p>
             </div>
           </motion.div>
