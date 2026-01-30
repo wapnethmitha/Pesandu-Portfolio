@@ -2,45 +2,39 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaLaptopCode, FaUserAlt, FaMobileAlt, FaPalette, FaCode, FaRocket } from 'react-icons/fa';
+import { FaMobileAlt, FaPalette, FaCode, FaRocket, FaServer } from 'react-icons/fa';
 
 const Services = () => {
   const services = [
     {
-      icon: FaUserAlt,
-      title: 'Personal Portfolios',
-      description: 'Clean, modern portfolio websites that showcase your work and make a great first impression.',
-      features: ['Responsive design', 'Fast loading', 'SEO friendly']
+      icon: FaCode,
+      title: 'Web Applications',
+      description: 'Full-stack web applications with modern frameworks, clean architecture, and responsive design.',
+      features: ['React / Next.js', 'REST APIs', 'Database integration']
     },
     {
       icon: FaRocket,
-      title: 'Landing Pages',
-      description: 'High-converting landing pages with conversion-focused layouts that capture attention and drive action.',
-      features: ['Conversion-focused', 'Call-to-action optimized', 'Mobile optimized']
-    },
-    {
-      icon: FaLaptopCode,
-      title: 'Business Websites',
-      description: 'Simple, professional websites for small businesses and startups.',
-      features: ['Contact forms', 'Clean layouts', 'Easy navigation']
+      title: 'Landing Pages & Portfolios',
+      description: 'Fast, responsive websites that look great on all devices and make a strong impression.',
+      features: ['Modern design', 'SEO friendly', 'Mobile optimized']
     },
     {
       icon: FaMobileAlt,
-      title: 'Responsive Web Design',
-      description: 'Websites that look great on all devices - desktop, tablet, and mobile.',
-      features: ['Mobile-first approach', 'Flexible layouts', 'Touch friendly']
+      title: 'Mobile App Contribution',
+      description: 'Experience contributing to cross-platform mobile apps using React Native with Expo.',
+      features: ['React Native', 'Expo Go', 'Team collaboration']
     },
     {
       icon: FaPalette,
-      title: 'UI Implementation',
-      description: 'Transform Figma or design mockups into pixel-perfect, functional interfaces.',
-      features: ['Design to code', 'Pixel perfect', 'Interactive elements']
+      title: 'UI/UX Implementation',
+      description: 'Transform designs into pixel-perfect, interactive interfaces with smooth animations.',
+      features: ['Figma to code', 'Animations', 'Responsive']
     },
     {
-      icon: FaCode,
-      title: 'Frontend for Web Apps',
-      description: 'Build the user interface layer for web applications using React and modern tools.',
-      features: ['Component based', 'State management', 'API integration']
+      icon: FaServer,
+      title: 'Backend Development',
+      description: 'Scalable server-side applications and APIs using Java, Python, or Node.js.',
+      features: ['Spring Boot', 'Node.js', 'RESTful APIs']
     }
   ];
 
@@ -71,7 +65,7 @@ const Services = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            Looking for a frontend developer? Here&apos;s how I can help bring your ideas to life.
+            From frontend to backend - here&apos;s how I can help bring your ideas to life.
           </motion.p>
         </motion.div>
 

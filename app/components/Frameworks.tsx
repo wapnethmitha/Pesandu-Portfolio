@@ -8,8 +8,7 @@ interface TechSkill {
   name: string;
   icon: string;
   description: string;
-  category: 'frontend' | 'other';
-  featured?: boolean;
+  category: 'frontend' | 'backend' | 'language';
 }
 
 const FrameworkCard = ({ skill, index }: { skill: TechSkill; index: number }) => {
@@ -56,7 +55,7 @@ const FrameworkCard = ({ skill, index }: { skill: TechSkill; index: number }) =>
           <div className="text-center">
             <motion.h3 className="text-xl font-semibold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent mb-1">{skill.name}
             </motion.h3>
-            <span className="text-xs text-gray-400">{skill.category === 'frontend' ? '⭐ Core Stack' : 'Additional'}</span> </div>
+            <span className="text-xs text-gray-400 capitalize">{skill.category}</span> </div>
         </motion.div>
 
         {/* Description overlay */}
@@ -105,84 +104,76 @@ const Frameworks = () => {
   }, []);
 
   const skills: TechSkill[] = [
-    // ✅ FEATURED FRONTEND STACK
-    {
-      name: 'React.js',
-      icon: '/icons/reactjs.png',
-      description: 'My go-to library for building interactive user interfaces. Used in multiple projects to create dynamic, component-based web applications.',
-      category: 'frontend',
-      featured: true
-    },
-    {
-      name: 'Next.js',
-      icon: '/icons/nextjs.png',
-      description: 'Framework of choice for building fast, SEO-friendly websites. Powers this portfolio and several client-ready projects.',
-      category: 'frontend',
-      featured: true
-    },
+    // Languages
     {
       name: 'JavaScript',
       icon: '/icons/javascript.png',
-      description: 'Core language for all my frontend work. Proficient in modern ES6+ features for clean, maintainable code.',
-      category: 'frontend',
-      featured: true
-    },
-    {
-      name: 'Tailwind CSS',
-      icon: '/icons/tailwind.png',
-      description: 'My preferred styling solution for rapid UI development. Creates clean, responsive designs with utility-first approach.',
-      category: 'frontend',
-      featured: true
-    },
-    {
-      name: 'HTML5',
-      icon: '/icons/html5.png',
-      description: 'Strong foundation in semantic HTML for accessible, well-structured web pages that rank well in search engines.',
-      category: 'frontend',
-      featured: true
-    },
-    {
-      name: 'Framer Motion',
-      icon: '/icons/framer.png',
-      description: 'Used to create smooth, professional animations that enhance user experience and bring interfaces to life.',
-      category: 'frontend',
-      featured: true
-    },
-    // ⚠️ OTHER SKILLS (de-emphasized)
-    {
-      name: 'Node.js',
-      icon: '/icons/nodejs.png',
-      description: 'Backend runtime for JavaScript. Used for API development and server-side functionality when needed.',
-      category: 'other'
+      description: 'Core language for web development. Proficient in modern ES6+ features for clean, maintainable code.',
+      category: 'language'
     },
     {
       name: 'Python',
       icon: '/icons/python.png',
-      description: 'Applied in data science, automation, and academic projects. Comfortable with scripting and backend logic.',
-      category: 'other'
+      description: 'Used for backend development, data science, and automation. Strong scripting and logic skills.',
+      category: 'language'
     },
     {
       name: 'Java',
       icon: '/icons/java.png',
-      description: 'Strong OOP foundation from academic projects. Experience with backend development and system design.',
-      category: 'other'
+      description: 'Strong OOP foundation. Experience with backend development, system design, and enterprise applications.',
+      category: 'language'
+    },
+    {
+      name: 'HTML5',
+      icon: '/icons/html5.png',
+      description: 'Solid foundation in semantic HTML for accessible, well-structured web pages.',
+      category: 'language'
+    },
+    // Backend
+    {
+      name: 'Node.js',
+      icon: '/icons/nodejs.png',
+      description: 'Backend runtime for JavaScript. Used for API development and server-side functionality.',
+      category: 'backend'
     },
     {
       name: 'Spring Boot',
       icon: '/icons/spring.png',
-      description: 'Java backend framework used in full-stack academic projects for building robust APIs.',
-      category: 'other'
+      description: 'Java backend framework for building robust, scalable REST APIs and enterprise applications.',
+      category: 'backend'
+    },
+    // Frontend
+    {
+      name: 'React.js',
+      icon: '/icons/reactjs.png',
+      description: 'Primary library for building interactive UIs. Used in multiple projects for dynamic web applications.',
+      category: 'frontend'
+    },
+    {
+      name: 'Next.js',
+      icon: '/icons/nextjs.png',
+      description: 'Framework for fast, SEO-friendly web apps. Powers this portfolio and several projects.',
+      category: 'frontend'
+    },
+    {
+      name: 'Tailwind CSS',
+      icon: '/icons/tailwind.png',
+      description: 'Preferred styling solution for rapid UI development with utility-first approach.',
+      category: 'frontend'
     },
     {
       name: 'React Native',
       icon: '/icons/reactnative.png',
-      description: 'Cross-platform mobile development. Collaborated on Pause+, a social media detox app.',
-      category: 'other'
+      description: 'Experience with cross-platform mobile development using Expo. Contributed to Pause+ app.',
+      category: 'frontend'
+    },
+    {
+      name: 'Framer Motion',
+      icon: '/icons/framer.png',
+      description: 'Creates smooth, professional animations that enhance user experience.',
+      category: 'frontend'
     },
   ];
-
-  const featuredSkills = skills.filter(s => s.featured);
-  const otherSkills = skills.filter(s => !s.featured);
 
   return (
     <section id="frameworks" className="min-h-screen bg-zinc-950 text-white py-20 px-4">
@@ -195,52 +186,19 @@ const Frameworks = () => {
         >
           <h2 className="text-4xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-blue-400 
             bg-clip-text text-transparent mb-4 leading-relaxed py-1">
-            My Frontend Stack
+            Technologies I Work With
           </h2>
           <p className="text-gray-400 text-lg">
-            The tools I use to build modern, responsive websites
+            My tech stack for building full-stack applications
           </p>
         </motion.div>
 
-        {/* Featured Frontend Technologies */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {featuredSkills.map((skill, index) => (
+        {/* All Technologies in one grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {skills.map((skill, index) => (
             <FrameworkCard key={skill.name} skill={skill} index={index} />
           ))}
         </div>
-
-        {/* Other Skills - Smaller, de-emphasized section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-12"
-        >
-          <h3 className="text-lg text-gray-500 text-center mb-6">Also familiar with</h3>
-          <div className="flex flex-wrap justify-center gap-3">
-            {otherSkills.map((skill, index) => (
-              <motion.div
-                key={skill.name}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-                whileHover={{ scale: 1.05, y: -2 }}
-                className="flex items-center gap-2 px-4 py-2 bg-zinc-900/50 backdrop-blur-sm rounded-lg border border-zinc-800/50 hover:border-zinc-700 transition-all"
-              >
-                <div className="w-5 h-5 relative">
-                  <Image
-                    src={skill.icon}
-                    alt={skill.name}
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-                <span className="text-sm text-gray-400">{skill.name}</span>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
 
         {/* Currently Exploring section */}
         <motion.div 

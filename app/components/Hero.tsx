@@ -107,7 +107,7 @@ const Hero = () => {
             >
               <span className="inline-flex items-center gap-2 px-4 py-2 bg-zinc-900/80 backdrop-blur-sm rounded-full border border-zinc-800 text-sm text-gray-400">
                 <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                Available for Freelance
+                Open to Opportunities
               </span>
             </motion.div>
 
@@ -131,8 +131,8 @@ const Hero = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4 }}
               >
-                Frontend Developer building{' '}
-                <span className="text-purple-400 font-medium">fast, responsive websites & landing pages</span>
+                Software Engineering Undergraduate{' '}
+                <span className="text-purple-400 font-medium">passionate about building great software</span>
               </motion.p>
             </motion.div>
 
@@ -143,8 +143,8 @@ const Hero = () => {
               transition={{ delay: 0.5 }}
               className="text-gray-500 text-base md:text-lg max-w-xl mb-8 leading-relaxed"
             >
-              I help individuals and small teams bring ideas to life with clean, modern, 
-              and responsive web experiences using React & Next.js.
+              I build full-stack applications with modern technologies. From responsive web interfaces 
+              to backend systems & I enjoy turning ideas into real, working products.
             </motion.p>
 
             {/* Tech stack pills */}
@@ -154,7 +154,7 @@ const Hero = () => {
               transition={{ delay: 0.6 }}
               className="flex flex-wrap justify-center gap-2 mb-8"
             >
-              {['React', 'Next.js', 'TypeScript', 'Tailwind CSS'].map((tech, i) => (
+              {['React', 'Next.js', 'Java', 'Python', 'Node.js'].map((tech, i) => (
                 <motion.span
                   key={tech}
                   initial={{ opacity: 0, scale: 0.8 }}

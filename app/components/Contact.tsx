@@ -70,10 +70,10 @@ const Contact = () => {
             <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-purple-500/20 rounded-xl p-6 backdrop-blur-sm">
               <div className="flex items-center justify-center gap-2 mb-2">
                 <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                <span className="text-green-400 font-medium">Open to Freelance & Remote Frontend Projects</span>
+                <span className="text-green-400 font-medium">Open to Internships & Freelance Projects</span>
               </div>
               <p className="text-gray-400">
-                Looking for a frontend developer for your next project? I&apos;d love to hear about it. 
+                Looking for a software engineering intern or need a developer for your project? 
                 Let&apos;s build something great together.
               </p>
             </div>
